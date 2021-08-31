@@ -1,0 +1,149 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #snake{
+            background-color: red;
+            position:relative;
+            width:40;
+            display:inline;
+            z-index: 1;
+
+            }
+        #button{
+            width :100px;
+            height:20px;
+            display: block;
+        }
+        #container{
+            border:solid 1px blue; 
+            width:410px;
+            height:410px;
+            position: absolute;
+            display: block;
+        }
+        #food{
+            background-color: seagreen;
+            width:10px;
+            display:inline;
+           position: relative;
+           transform:rotate(10deg); 
+       }
+       #controls{
+           position:relative;
+           top :420px;
+       }
+       #javascript{
+           color:blue;
+           display:inline;
+           background-color:brown ;
+       }
+    </style>
+    <title>JavaScript</title>
+</head>
+<body>
+    <div id = "container">
+        <span id="snake">snake</span>
+        <p id="food">F</p>
+    </div>
+    <div id="controls">
+        
+        <button id = "button" onclick="move()">Start snake</button>
+        <button id="rotate" onclick="rotate()">rotate</button>
+
+    </div>
+    <p id="javascript"> </p>
+</body>
+<script>
+
+//rotate fucntinon button
+
+
+    function move(){
+        
+        //declaring the variables in the code
+
+        var pos = 0;
+        var i= 0;
+        var food =[50,90,140,220];
+        var snake= document.getElementById('snake').style;
+        var foodPlace= document.getElementById('food').style;
+        var length = 40;
+
+
+        //setting the interval
+
+        var id = setInterval(step,1000);
+        var checking = setInterval(check,1000);
+
+        //defining the function for the functioning of the snake
+
+        //rotating on the key event
+
+        
+
+        //placing the food according to the object
+
+        function food(){
+            foodPlace.left = "50px";
+        }
+
+        //food eat fucntion
+
+        function check(){
+
+            if (pos == food[i]){
+                length = length +20;
+                snake.width =`${length}px`;
+                i++
+            }
+            else{
+                snake.width = `${length}px`;
+            }
+        }
+
+        // moving hte snake function
+
+        function step(){
+        if(pos== 290){
+            clearInterval(id);
+            alert('you lose because you hit the boundary') ;  
+        }
+         else {
+            pos=pos+10;
+            snake.left= `${pos}px`;
+        }
+        }
+        }
+
+        //function
+
+        function rotate(){
+            var foodRotate = document.getElementById('food').style;
+            foodRotate.display = "block";
+            foodRotate.transform = "rotate(90deg)";   
+            var inline = "inline";
+        }
+
+//trying javascript
+
+var trying = document.getElementById('javascript');
+var array = ['ashran','faraz','furquan','hashir','wali']
+array.forEach(publishing);
+function publishing(friends,preference){
+    var information =`${friends} and his preference is ${preference}`;
+    trying.style.letterSpacing ="1px";
+    document.write(`<p id = "javascript">${information}</p><br>`);
+}
+
+//tyring thtt key events
+
+function checkKey(e) {
+    var event = window.event ? window.event : e;
+    console.log(event.keyCode)
+}
+
+</script>
+</html>
