@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tyring</title>
+</head>
+<body>
+    <div id="task">heello</div>
+</body>
+<script>
+    var array = [{"name":"ashran"},{"name":"faraz"}]
+    var array2 = [...array]
+    console.log(array2)
+    //
+
+    const data = [{"name":"ashran","tweet":"treat everyday a separate entity and start every morning happily as they say one day at a time"},
+                {"name":"furquan","tweet":"money saved is money earned as they say in old sayings"},
+                {"name":"faraz","tweet":"please stop this shit now you guys are just stupidly posting shit keep that shit to yourself"}];
+    data.forEach((post)=>{
+            var node = document.createElement("p");
+            var child = document.createTextNode(post.name);
+            node.appendChild(child);
+            var ashran = document.getElementById('task');
+            ashran.appendChild(node);
+    })
+
+</script>
+
+
+</html>
